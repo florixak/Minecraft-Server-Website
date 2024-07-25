@@ -5,12 +5,31 @@ export default {
     fontSize: {
       h1: "3rem",
       h2: "1.5rem",
+      description: "1rem",
+    },
+    screens: {
+      desktop: "1440px",
+      laptop: "1366px",
+      tablet: "768px",
+      mobile: "375px",
+    },
+    container: {
+      center: "center",
+      padding: {
+        DEFAULT: "3rem",
+        sm: "1rem",
+      },
     },
     extend: {
-      colors: {},
+      colors: {
+        darkBlue: "#201E43",
+        background: "#334155",
+        blue: "#134B70",
+        light: "#EEEEEE",
+      },
     },
     fontFamily: {
-      "robotos-slab": ["Roboto Slab", "serif"],
+      "bebas-neue": ["Bebas Neue", "serif"],
     },
   },
   plugins: [],

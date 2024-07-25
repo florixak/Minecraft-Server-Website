@@ -1,17 +1,5 @@
-@import url("https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@100..900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap");
 
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-
-header {
-  background-image: url("src/assets/starry_sky.jpg");
-  background-position: center;
-  background-size: cover;
-  background-repeat: no-repeat;
-}
-@layer components {
-  body {
-    @apply bg-slate-700;
-  }
-}
