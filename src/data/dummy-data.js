@@ -1,3 +1,6 @@
+import CaptureTheFlagImage from "../assets/CaptureTheFlag.png";
+import CustomCosmeticsImage from "../assets/CustomCosmetics.png";
+
 export const changelog = [
   {
     version: "1.0.0",
@@ -40,6 +43,49 @@ export const changelog = [
           "Updated descriptions for 'VIP Rank' and 'VIP+ Rank' to be more concise.",
       },
     ],
+  },
+];
+
+export const news = [
+  {
+    id: 1,
+    title: "New Minigame: Capture the Flag",
+    image: CaptureTheFlagImage,
+    date: "2023-10-10",
+    description:
+      "Introducing a thrilling new minigame where players compete to capture the enemy's flag and bring it back to their base. Gather your team and strategize to claim victory!",
+  },
+  {
+    id: 2,
+    title: "Feature Update: Custom Cosmetics",
+    image: CustomCosmeticsImage,
+    date: "2023-10-15",
+    description:
+      "We've added a new feature that allows players to customize their appearance with unique cosmetics. Stand out from the crowd with stylish hats, colorful particle effects, and more!",
+  },
+  {
+    id: 3,
+    title: "Bug Fix: Teleportation Glitch",
+    image: "../assets/CaptureTheFlag.png",
+    date: "2023-10-20",
+    description:
+      "We've resolved a teleportation glitch that was causing players to get stuck in walls or fall through the ground. Enjoy smooth and seamless teleportation throughout the server!",
+  },
+  {
+    id: 4,
+    title: "New Reward: Monthly Loyalty Crate",
+    image: "../assets/CaptureTheFlag.png",
+    date: "2023-10-25",
+    description:
+      "To show our appreciation for your continued support, we're introducing the Monthly Loyalty Crate. Log in every month to receive exclusive rewards, including rare items, in-game currency, and more!",
+  },
+  {
+    id: 5,
+    title: "Cosmetic Update: Particle Effects",
+    image: "../assets/CaptureTheFlag.png",
+    date: "2023-10-30",
+    description:
+      "We've added a variety of new particle effects to enhance your gameplay experience. From sparkling trails to fiery explosions, customize your effects and make a dazzling impression!",
   },
 ];
 

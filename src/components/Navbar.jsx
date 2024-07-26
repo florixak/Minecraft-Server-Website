@@ -1,20 +1,21 @@
 import HPSAstronaut from "../assets/HPSAstronaut.png";
-import { Link } from "react-router-dom";
+// import HPSEarth from "../assets/HPSEarth.png";
+import { NavLink } from "react-router-dom";
 import { FaUser } from "react-icons/fa";
 import { IoArrowDownOutline, IoMenu } from "react-icons/io5";
 import { useState } from "react";
 
 const NavLinks = [
-  { name: "Home", link: "#" },
-  { name: "Minigames", link: "#minigames" },
-  { name: "Store", link: "#store" },
-  { name: "Rules", link: "#rules" },
+  { name: "Home", link: "/" },
+  { name: "Minigames", link: "/minigames" },
+  { name: "Store", link: "/store" },
+  { name: "Rules", link: "/rules" },
 ];
 
 const MoreNavLinks = [
-  { name: "Staff", link: "#staff" },
-  { name: "FAQ", link: "#faq" },
-  { name: "Recruitment", link: "#recruitment" },
+  { name: "Staff", link: "/staff" },
+  { name: "FAQ", link: "/faq" },
+  { name: "Recruitment", link: "/recruitment" },
 ];
 
 const Navbar = () => {
@@ -28,22 +29,23 @@ const Navbar = () => {
     <nav className="fixed flex h-auto w-full flex-row justify-evenly border-b-8 bg-light shadow-2xl shadow-black">
       {/* Logo section */}
       <div>
-        <Link to={NavLinks[0].link}>
+        <NavLink to={NavLinks[0].link}>
           <img
             src={HPSAstronaut}
             alt="HPS Astronaut Logo"
             width={128}
             height={128}
+            className="animate-wiggle"
           />
-        </Link>
+        </NavLink>
       </div>
 
-      <div className="tablet:flex hidden flex-col justify-center gap-10 text-center">
+      <div className="hidden flex-col justify-center gap-10 text-center tablet:flex">
         <ul className="flex flex-row items-center justify-center gap-16 text-h2">
           {NavLinks.map((item, index) => (
-            <Link key={index} to={item.link}>
+            <NavLink key={index} to={item.link}>
               {item.name}
-            </Link>
+            </NavLink>
           ))}
           <li className="relative flex items-center hover:cursor-pointer">
             <IoArrowDownOutline
@@ -51,12 +53,12 @@ const Navbar = () => {
               onClick={handleShowMore}
             />
             {showMore && (
-              <ul className="absolute top-[30px] flex w-auto flex-col border-2 border-darkBlue bg-light text-center">
+              <ul className="absolute top-[30px] flex w-auto flex-col items-start justify-center border-2 border-darkBlue bg-light px-5">
                 {MoreNavLinks.map((item, index) => {
                   return (
-                    <Link key={index} to={item.link}>
+                    <NavLink key={index} to={item.link}>
                       {item.name}
-                    </Link>
+                    </NavLink>
                   );
                 })}
               </ul>
@@ -66,7 +68,7 @@ const Navbar = () => {
       </div>
 
       {/* User login */}
-      <div className="tablet:flex hidden items-center">
+      <div className="hidden items-center tablet:flex">
         <button className="flex items-center">
           <span className="text-description">Login</span>
           <FaUser size={38} />
@@ -74,7 +76,7 @@ const Navbar = () => {
       </div>
 
       {/* Mobile Hamburger */}
-      <div className="tablet:hidden flex items-center">
+      <div className="flex items-center tablet:hidden">
         <IoMenu size={64} />
       </div>
     </nav>
