@@ -18,15 +18,34 @@ const MoreNavLinks = [
   { name: "Recruitment", link: "/recruitment" },
 ];
 
+const MobileNavLinks = [...NavLinks, ...MoreNavLinks];
+
 const Navbar = () => {
+  const [mobileNav, setMobileNav] = useState(false);
   const [showMore, setShowMore] = useState(false);
 
   function handleShowMore() {
     setShowMore((prev) => !prev);
   }
 
+  function handleMobileNav() {
+    setMobileNav((prev) => !prev);
+  }
+
   return (
     <nav className="fixed flex h-auto w-full flex-row justify-evenly border-b-8 bg-light shadow-2xl shadow-black">
+      {mobileNav && (
+        <div className="absolute z-40 flex h-screen w-full flex-col items-center justify-center overflow-hidden bg-light text-h2 tablet:hidden">
+          {MobileNavLinks.map((item, index) => {
+            return (
+              <NavLink key={index} to={item.link} onClick={handleMobileNav}>
+                {item.name}
+              </NavLink>
+            );
+          })}
+        </div>
+      )}
+
       {/* Logo section */}
       <div>
         <NavLink to={NavLinks[0].link}>
@@ -40,8 +59,8 @@ const Navbar = () => {
         </NavLink>
       </div>
 
-      <div className="hidden flex-col justify-center gap-10 text-center tablet:flex">
-        <ul className="flex flex-row items-center justify-center gap-16 text-h2">
+      <div className="flex flex-col justify-center gap-10 text-center">
+        <ul className="hidden flex-row items-center justify-center gap-16 text-h2 tablet:flex">
           {NavLinks.map((item, index) => (
             <NavLink key={index} to={item.link}>
               {item.name}
@@ -53,7 +72,7 @@ const Navbar = () => {
               onClick={handleShowMore}
             />
             {showMore && (
-              <ul className="absolute top-[30px] flex w-auto flex-col items-start justify-center border-2 border-darkBlue bg-light px-5">
+              <ul className="absolute right-3 top-[30px] flex w-auto flex-col items-start justify-center border-2 border-darkBlue bg-light px-5 desktop:-right-40">
                 {MoreNavLinks.map((item, index) => {
                   return (
                     <NavLink key={index} to={item.link}>
@@ -70,14 +89,13 @@ const Navbar = () => {
       {/* User login */}
       <div className="hidden items-center tablet:flex">
         <button className="flex items-center">
-          <span className="text-description">Login</span>
           <FaUser size={38} />
         </button>
       </div>
 
       {/* Mobile Hamburger */}
-      <div className="flex items-center tablet:hidden">
-        <IoMenu size={64} />
+      <div className="z-50 flex items-center tablet:hidden">
+        <IoMenu size={64} onClick={handleMobileNav} />
       </div>
     </nav>
   );

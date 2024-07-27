@@ -11,7 +11,7 @@ import Register from "./auth/Register.jsx";
 
 const App = () => {
   return (
-    <div className="h-screen overflow-x-hidden bg-background font-bebas-neue">
+    <div className="relative flex h-screen flex-col overflow-x-hidden bg-background">
       <Navbar />
       <Routes>
         <Route index element={<News />} />
@@ -19,6 +19,8 @@ const App = () => {
         <Route path="store" element={<Store />} />
         <Route path="rules" element={<Rules />} />
         <Route path="staff" element={<Staff />} />
+        <Route path="faq" element={<Staff />} />
+        <Route path="recruitment" element={<Staff />} />
         <Route path="login" element={<Login />} />
         <Route path="register" element={<Register />} />
       </Routes>
