@@ -1,5 +1,7 @@
-import CaptureTheFlagImage from "../assets/CaptureTheFlag.png";
-import CustomCosmeticsImage from "../assets/CustomCosmetics.png";
+import CaptureTheFlagImage from "../assets/images/CaptureTheFlag.png";
+import Chest from "../assets/images/chest.png";
+import Cosmetics from "../assets/images/cosmetics.png";
+import TeleportGlitch from "../assets/images/TeleportGlitch.png";
 
 export const changelog = [
   {
@@ -57,8 +59,8 @@ export const news = [
   },
   {
     id: 2,
-    title: "Feature Update: Custom Cosmetics",
-    image: CustomCosmeticsImage,
+    title: "Feature Update: New Cosmetics",
+    image: Cosmetics,
     date: "2023-10-15",
     description:
       "We've added a new feature that allows players to customize their appearance with unique cosmetics. Stand out from the crowd with stylish hats, colorful particle effects, and more!",
@@ -66,7 +68,7 @@ export const news = [
   {
     id: 3,
     title: "Bug Fix: Teleportation Glitch",
-    image: "../assets/CaptureTheFlag.png",
+    image: TeleportGlitch,
     date: "2023-10-20",
     description:
       "We've resolved a teleportation glitch that was causing players to get stuck in walls or fall through the ground. Enjoy smooth and seamless teleportation throughout the server!",
@@ -74,7 +76,7 @@ export const news = [
   {
     id: 4,
     title: "New Reward: Monthly Loyalty Crate",
-    image: "../assets/CaptureTheFlag.png",
+    image: Chest,
     date: "2023-10-25",
     description:
       "To show our appreciation for your continued support, we're introducing the Monthly Loyalty Crate. Log in every month to receive exclusive rewards, including rare items, in-game currency, and more!",

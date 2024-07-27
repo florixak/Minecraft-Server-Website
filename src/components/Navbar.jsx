@@ -1,5 +1,5 @@
-import HPSAstronaut from "../assets/HPSAstronaut.png";
-// import HPSEarth from "../assets/HPSEarth.png";
+import HPSAstronaut from "../assets/images/HPSAstronaut.png";
+// import HPSEarth from "../assets/images/HPSEarth.png";
 import { NavLink } from "react-router-dom";
 import { FaUser } from "react-icons/fa";
 import { IoArrowDownOutline, IoMenu } from "react-icons/io5";
