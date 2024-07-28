@@ -34,7 +34,7 @@ const Navbar = () => {
   }
 
   return (
-    <nav className="fixed flex h-auto w-full flex-row justify-evenly border-b-8 bg-light text-black shadow-2xl shadow-black">
+    <nav className="fixed z-50 flex h-auto w-full flex-row justify-evenly border-b-8 bg-light text-black shadow-2xl shadow-black">
       {/* Logo section */}
       <div>
         <NavLink to={NavLinks[0].link}>

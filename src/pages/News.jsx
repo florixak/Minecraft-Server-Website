@@ -6,7 +6,6 @@ const News = () => {
   return (
     <Section>
       <h1 className="font-bebas-neue text-h1">NEWS</h1>
-
       <ImageSlider list={news} />
     </Section>
   );

@@ -29,19 +29,18 @@ const ImageSlider = ({ list }) => {
   };
 
   return (
-    <div className="relative flex w-full flex-row items-center justify-center rounded-xl bg-light p-10 text-black shadow-xl shadow-black desktop:max-h-[35rem]">
+    <div className="flex w-full flex-row items-center justify-center text-light">
       <PageButton type="previous" />
-      <div className="static flex flex-col items-center justify-center gap-5 p-10">
-        <div>
-          <h1 className="text-h2 font-bold">{title.split(":")[1]}</h1>
-          <h2 className="text-h2 font-semibold">{title.split(":")[0]}</h2>
+      <div className="relative flex flex-col items-center justify-center gap-5 p-10">
+        <div className="absolute -bottom-16 max-h-[12rem] w-full rounded-lg bg-light p-5 text-black">
+          <h1 className="text-h2 font-semibold">{title.split(":")[0]}</h1>
+          <h2 className="text-h2 font-bold">{title.split(":")[1]}</h2>
           <p className="h-[100px] w-[600px]">{description}</p>
         </div>
-        <div className="h-1 w-full bg-black" />
         <img
           src={image}
           alt="Image"
-          className="static max-h-[350px] max-w-[600px] rounded-xl object-contain"
+          className="static h-auto w-[800px] rounded-xl bg-light object-cover p-2"
         />
       </div>
       <PageButton type="next" />
