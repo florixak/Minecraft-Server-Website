@@ -8,6 +8,7 @@ import Rules from "./pages/Rules.jsx";
 import Staff from "./pages/Staff.jsx";
 import Login from "./auth/Login.jsx";
 import Register from "./auth/Register.jsx";
+import Changelog from "./pages/Changelog.jsx";
 
 const App = () => {
   return (
@@ -21,6 +22,7 @@ const App = () => {
         <Route path="staff" element={<Staff />} />
         <Route path="faq" element={<Staff />} />
         <Route path="recruitment" element={<Staff />} />
+        <Route path="changelog" element={<Changelog />} />
         <Route path="login" element={<Login />} />
         <Route path="register" element={<Register />} />
       </Routes>

@@ -5,6 +5,7 @@ export default {
     fontSize: {
       h1: "3rem",
       h2: "1.5rem",
+      "minigame-title": "2rem",
       description: "0.8rem",
     },
     screens: {
@@ -15,7 +16,7 @@ export default {
     },
     extend: {
       colors: {
-        darkBlue: "#201E43",
+        "dark-blue": "#201E43",
         background: "#334155",
         blue: "#134B70",
         light: "#EEEEEE",
@@ -24,6 +25,7 @@ export default {
     fontFamily: {
       "bebas-neue": ["Bebas Neue", "serif"],
       "open-sans": ["Open Sans", "sans-serif"],
+      "titillium-web": ["Titillium Web", "sans-serif"],
     },
     animation: {
       wiggle: "wiggle 10s ease-in-out infinite",

@@ -16,6 +16,7 @@ const MoreNavLinks = [
   { name: "Staff", link: "/staff" },
   { name: "FAQ", link: "/faq" },
   { name: "Recruitment", link: "/recruitment" },
+  { name: "Changelog", link: "/changelog" },
 ];
 
 const MobileNavLinks = [...NavLinks, ...MoreNavLinks];
@@ -33,19 +34,7 @@ const Navbar = () => {
   }
 
   return (
-    <nav className="fixed flex h-auto w-full flex-row justify-evenly border-b-8 bg-light shadow-2xl shadow-black">
-      {mobileNav && (
-        <div className="absolute z-40 flex h-screen w-full flex-col items-center justify-center overflow-hidden bg-light text-h2 tablet:hidden">
-          {MobileNavLinks.map((item, index) => {
-            return (
-              <NavLink key={index} to={item.link} onClick={handleMobileNav}>
-                {item.name}
-              </NavLink>
-            );
-          })}
-        </div>
-      )}
-
+    <nav className="fixed flex h-auto w-full flex-row justify-evenly border-b-8 bg-light text-black shadow-2xl shadow-black">
       {/* Logo section */}
       <div>
         <NavLink to={NavLinks[0].link}>
@@ -97,6 +86,19 @@ const Navbar = () => {
       <div className="z-50 flex items-center tablet:hidden">
         <IoMenu size={64} onClick={handleMobileNav} />
       </div>
+
+      {/* Mobile Nav */}
+      {mobileNav && (
+        <div className="absolute z-40 flex h-screen w-full flex-col items-center justify-center overflow-hidden bg-light text-h2 tablet:hidden">
+          {MobileNavLinks.map((item, index) => {
+            return (
+              <NavLink key={index} to={item.link} onClick={handleMobileNav}>
+                {item.name}
+              </NavLink>
+            );
+          })}
+        </div>
+      )}
     </nav>
   );
 };
