@@ -9,4 +9,26 @@
   html {
     @apply scroll-smooth;
   }
+
+  .new::after {
+    content: "NEW!";
+    position: absolute;
+    top: 5px;
+    right: 0px;
+    color: white;
+    background-color: red;
+    color: white;
+    padding: 5px 10px;
+    rotate: 25deg;
+    font-size: 20px;
+    font-weight: bold;
+    border-radius: 5px;
+    @apply animate-floating;
+  }
+}
+
+@layer utilities {
+  .hover-off\:animate-move-right-reverse:hover {
+    @apply animate-move-right-reverse;
+  }
 }

@@ -29,10 +29,10 @@ const ImageSlider = ({ list }) => {
   };
 
   return (
-    <div className="flex w-full flex-row items-center justify-center text-light">
+    <div className="flex w-full flex-row items-center justify-center font-titillium-web text-light">
       <PageButton type="previous" />
       <div className="relative flex flex-col items-center justify-center gap-5 p-10">
-        <div className="absolute -bottom-16 max-h-[12rem] w-full rounded-lg bg-light p-5 text-black">
+        <div className="hover:animate-none absolute -bottom-16 max-h-[12rem] w-full animate-floating bg-light p-5 text-black">
           <h1 className="text-h2 font-semibold">{title.split(":")[0]}</h1>
           <h2 className="text-h2 font-bold">{title.split(":")[1]}</h2>
           <p className="h-[100px] w-[600px]">{description}</p>
@@ -40,7 +40,7 @@ const ImageSlider = ({ list }) => {
         <img
           src={image}
           alt="Image"
-          className="static h-auto w-[800px] rounded-xl bg-light object-cover p-2"
+          className="static h-auto w-[800px] bg-light object-cover p-2"
         />
       </div>
       <PageButton type="next" />

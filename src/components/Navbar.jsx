@@ -51,7 +51,17 @@ const Navbar = () => {
       <div className="flex flex-col justify-center gap-10 text-center">
         <ul className="hidden flex-row items-center justify-center gap-16 text-h2 tablet:flex">
           {NavLinks.map((item, index) => (
-            <NavLink key={index} to={item.link}>
+            <NavLink
+              key={index}
+              to={item.link}
+              className={({ isActive, isPending }) =>
+                isPending
+                  ? ""
+                  : isActive
+                    ? "before:animate-pulse relative before:absolute before:left-1/2 before:top-[40px] before:h-2 before:w-2 before:-translate-x-1/2 before:transform before:rounded-full before:bg-black"
+                    : ""
+              }
+            >
               {item.name}
             </NavLink>
           ))}
@@ -61,10 +71,14 @@ const Navbar = () => {
               onClick={handleShowMore}
             />
             {showMore && (
-              <ul className="absolute right-3 top-[30px] flex w-auto flex-col items-start justify-center border-2 border-darkBlue bg-light px-5 desktop:-right-40">
+              <ul className="absolute right-3 top-[30px] flex w-auto flex-col items-start justify-center border-2 border-black bg-light px-5 desktop:-right-40">
                 {MoreNavLinks.map((item, index) => {
                   return (
-                    <NavLink key={index} to={item.link}>
+                    <NavLink
+                      key={index}
+                      to={item.link}
+                      className="hover-off:animate-move-right-reverse w-full text-left hover:animate-move-right-hover"
+                    >
                       {item.name}
                     </NavLink>
                   );
