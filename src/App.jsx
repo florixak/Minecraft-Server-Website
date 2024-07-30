@@ -9,11 +9,13 @@ import Staff from "./pages/Staff.jsx";
 import Login from "./auth/Login.jsx";
 import Register from "./auth/Register.jsx";
 import Changelog from "./pages/Changelog.jsx";
+import BackToTop from "./components/BackToTop.jsx";
 
 const App = () => {
   return (
-    <div className="relative flex h-screen flex-col overflow-x-hidden bg-background">
+    <div className="relative flex min-h-screen flex-col overflow-x-hidden">
       <Navbar />
+      <BackToTop />
       <Routes>
         <Route index element={<News />} />
         <Route path="minigames" element={<Minigames />} />

@@ -7,7 +7,7 @@
 
 @layer base {
   html {
-    @apply scroll-smooth;
+    @apply scroll-smooth bg-background;
   }
 
   .new::after {
@@ -23,7 +23,8 @@
     font-size: 20px;
     font-weight: bold;
     border-radius: 5px;
-    @apply animate-floating;
+    z-index: 20;
+    @apply animate-scaling;
   }
 }
 

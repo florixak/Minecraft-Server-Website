@@ -36,6 +36,7 @@ export default {
       "move-right-hover": "move-right-hover 0.5s forwards",
       "move-right-reverse": "move-right-reverse 0.5s forwards",
       pulse: "pulse 3s cubic-bezier(0.4, 0, 0.6, 1) infinite",
+      scaling: "scaling 5s ease-in-out infinite",
       none: "none",
     },
     keyframes: {
@@ -75,6 +76,11 @@ export default {
         "50%": {
           opacity: 0.5,
         },
+      },
+      scaling: {
+        "0%": { transform: "scale(1)" },
+        "50%": { transform: "scale(1.1)" },
+        "100%": { transform: "scale(1)" },
       },
     },
   },

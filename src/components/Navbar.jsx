@@ -58,7 +58,7 @@ const Navbar = () => {
                 isPending
                   ? ""
                   : isActive
-                    ? "before:animate-pulse relative before:absolute before:left-1/2 before:top-[40px] before:h-2 before:w-2 before:-translate-x-1/2 before:transform before:rounded-full before:bg-black"
+                    ? "relative before:absolute before:left-1/2 before:top-[40px] before:h-2 before:w-2 before:-translate-x-1/2 before:transform before:animate-pulse before:rounded-full before:bg-black"
                     : ""
               }
             >
@@ -80,6 +80,9 @@ const Navbar = () => {
                       className="hover-off:animate-move-right-reverse w-full text-left hover:animate-move-right-hover"
                     >
                       {item.name}
+                      {index !== MoreNavLinks.length - 1 && (
+                        <div className="h-[1px] w-full bg-black"></div>
+                      )}
                     </NavLink>
                   );
                 })}
@@ -92,7 +95,9 @@ const Navbar = () => {
       {/* User login */}
       <div className="hidden items-center tablet:flex">
         <button className="flex items-center">
-          <FaUser size={38} />
+          <NavLink to="/login">
+            <FaUser size={38} />
+          </NavLink>
         </button>
       </div>
 

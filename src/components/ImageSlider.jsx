@@ -1,9 +1,18 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { IoArrowBack, IoArrowForward } from "react-icons/io5";
+import { motion } from "framer-motion";
+import { SlideUp } from "../motions/motions";
 
 const ImageSlider = ({ list }) => {
   const [current, setCurrent] = useState(0);
   const { title, image, description } = list[current];
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrent((prev) => (prev + 1) % list.length);
+    }, 10000);
+    return () => clearInterval(interval);
+  }, [current, list.length]);
 
   const handleNext = () => {
     setCurrent((prev) => (prev + 1) % list.length);
@@ -28,20 +37,50 @@ const ImageSlider = ({ list }) => {
     );
   };
 
+  const imageVariants = {
+    hidden: { opacity: 0, y: 80 },
+    visible: { opacity: 1, y: 0 },
+    exit: { opacity: 0, y: -80 },
+  };
+
+  const textBubbleVariants = {
+    hidden: { opacity: 0, y: 50 },
+    visible: { opacity: 1, y: 0 },
+    exit: { opacity: 0, y: 50 },
+  };
+
   return (
     <div className="flex w-full flex-row items-center justify-center font-titillium-web text-light">
       <PageButton type="previous" />
       <div className="relative flex flex-col items-center justify-center gap-5 p-10">
-        <div className="hover:animate-none absolute -bottom-16 max-h-[12rem] w-full animate-floating bg-light p-5 text-black">
+        <motion.div
+          key={current}
+          variants={imageVariants}
+          initial="hidden"
+          animate="visible"
+          exit="exit"
+          transition={{ duration: 0.5, delay: 0.3 }}
+          className="static z-10 h-[500px] w-[800px] rounded-xl object-cover shadow-lg shadow-black"
+        >
+          <motion.img
+            src={image}
+            alt="Image"
+            className="h-full w-full rounded-xl"
+          />
+        </motion.div>
+        <motion.div
+          key={`text-${current}`}
+          variants={textBubbleVariants}
+          initial="hidden"
+          animate="visible"
+          exit="exit"
+          transition={{ duration: 0.3, delay: 0.3 }}
+          className="absolute -bottom-16 z-20 max-h-[12rem] w-full animate-floating rounded-xl bg-light p-5 text-black shadow-lg shadow-black hover:animate-none"
+        >
           <h1 className="text-h2 font-semibold">{title.split(":")[0]}</h1>
           <h2 className="text-h2 font-bold">{title.split(":")[1]}</h2>
           <p className="h-[100px] w-[600px]">{description}</p>
-        </div>
-        <img
-          src={image}
-          alt="Image"
-          className="static h-auto w-[800px] bg-light object-cover p-2"
-        />
+        </motion.div>
       </div>
       <PageButton type="next" />
     </div>

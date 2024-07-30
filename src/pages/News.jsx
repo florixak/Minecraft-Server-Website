@@ -5,7 +5,7 @@ import ImageSlider from "../components/ImageSlider";
 const News = () => {
   return (
     <Section>
-      <h1 className="text-h1">NEWS</h1>
+      <h1 className="text-h1">WHAT IS NEW?</h1>
       <ImageSlider list={news} />
     </Section>
   );
