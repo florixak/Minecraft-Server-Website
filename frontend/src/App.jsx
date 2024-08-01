@@ -10,12 +10,15 @@ import Login from "./auth/Login.jsx";
 import Register from "./auth/Register.jsx";
 import Changelog from "./pages/Changelog.jsx";
 import BackToTop from "./components/BackToTop.jsx";
+import NightBackground from "./assets/images/background.png";
+import RouteScrollTop from "./components/RouteScrollTop.jsx";
 
 const App = () => {
   return (
     <div className="relative flex min-h-screen flex-col overflow-x-hidden">
       <Navbar />
       <BackToTop />
+      <RouteScrollTop />
       <Routes>
         <Route index element={<News />} />
         <Route path="minigames" element={<Minigames />} />
@@ -28,6 +31,12 @@ const App = () => {
         <Route path="login" element={<Login />} />
         <Route path="register" element={<Register />} />
       </Routes>
+      <div className="gradient"></div>
+      <img
+        src={NightBackground}
+        alt="Background"
+        className="absolute -z-10 block h-full w-full object-cover"
+      />
       <Footer />
     </div>
   );

@@ -7,7 +7,14 @@
 
 @layer base {
   html {
-    @apply scroll-smooth bg-background;
+    @apply scroll-smooth;
+  }
+
+  .gradient {
+    @apply absolute -z-[5] h-full w-full;
+    background-image: linear-gradient(to top, transparent, black, transparent);
+    top: 0;
+    left: 0;
   }
 
   .new::after {

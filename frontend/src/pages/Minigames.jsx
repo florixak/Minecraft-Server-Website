@@ -21,7 +21,7 @@ const Minigames = () => {
               <div
                 className={`absolute -bottom-16 flex w-full flex-col justify-evenly`}
               >
-                <div className="z-20 w-full rounded-lg bg-light p-5 shadow-lg shadow-black focus:animate-none tablet:animate-floating">
+                <div className="z-20 w-full bg-light p-5 shadow-lg shadow-light focus:animate-none tablet:animate-floating">
                   <h1 className="text-minigame-title">{name}</h1>
                   <p>
                     <span className="font-bold">Mode:</span> {players}
@@ -36,7 +36,7 @@ const Minigames = () => {
               <img
                 src={image}
                 alt={`${name} image`}
-                className="z-10 w-full rounded-lg object-contain shadow-lg shadow-black"
+                className="z-10 w-full object-contain"
               />
             </motion.div>
           ),

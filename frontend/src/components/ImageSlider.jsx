@@ -1,7 +1,6 @@
 import { useEffect, useState } from "react";
 import { IoArrowBack, IoArrowForward } from "react-icons/io5";
 import { motion } from "framer-motion";
-import { SlideUp } from "../motions/motions";
 
 const ImageSlider = ({ list }) => {
   const [current, setCurrent] = useState(0);
@@ -50,7 +49,7 @@ const ImageSlider = ({ list }) => {
   };
 
   return (
-    <div className="flex w-full flex-row items-center justify-center font-titillium-web text-light">
+    <div className="flex w-[30%] flex-row items-center justify-center font-titillium-web text-light laptop:w-full">
       <PageButton type="previous" />
       <div className="relative flex flex-col items-center justify-center gap-5 p-10">
         <motion.div
@@ -60,13 +59,9 @@ const ImageSlider = ({ list }) => {
           animate="visible"
           exit="exit"
           transition={{ duration: 0.5, delay: 0.3 }}
-          className="static z-10 h-[500px] w-[800px] rounded-xl object-cover shadow-lg shadow-black"
+          className="static z-10 h-[600px] w-[1000px] object-cover"
         >
-          <motion.img
-            src={image}
-            alt="Image"
-            className="h-full w-full rounded-xl"
-          />
+          <motion.img src={image} alt="Image" className="h-full w-full" />
         </motion.div>
         <motion.div
           key={`text-${current}`}
@@ -75,7 +70,7 @@ const ImageSlider = ({ list }) => {
           animate="visible"
           exit="exit"
           transition={{ duration: 0.3, delay: 0.3 }}
-          className="absolute -bottom-16 z-20 max-h-[12rem] w-full animate-floating rounded-xl bg-light p-5 text-black shadow-lg shadow-black hover:animate-none"
+          className="absolute -bottom-16 z-20 max-h-[12rem] w-full animate-floating bg-light p-5 text-black shadow-lg shadow-light hover:animate-none"
         >
           <h1 className="text-h2 font-semibold">{title.split(":")[0]}</h1>
           <h2 className="text-h2 font-bold">{title.split(":")[1]}</h2>
