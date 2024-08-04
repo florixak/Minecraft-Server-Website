@@ -1,5 +1,6 @@
-@import url("https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Edu+AU+VIC+WA+NT+Hand:wght@400..700&family=Titillium+Web:ital,wght@0,200;0,300;0,400;0,600;0,700;0,900;1,200;1,300;1,400;1,600;1,700&display=swap");
+/* @import url("https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Edu+AU+VIC+WA+NT+Hand:wght@400..700&family=Titillium+Web:ital,wght@0,200;0,300;0,400;0,600;0,700;0,900;1,200;1,300;1,400;1,600;1,700&display=swap"); */
+/* @import url("./assets/fonts/Minecraft.ttf"); */
 
 @tailwind base;
 @tailwind components;
@@ -8,14 +9,23 @@
 @layer base {
   html {
     @apply scroll-smooth;
+    background-color: black;
+    /* @apply bg-cover; */
   }
 
-  .gradient {
+  /* .gradient {
     @apply absolute -z-[5] h-full w-full;
-    background-image: linear-gradient(to top, transparent, black, transparent);
+    background-image: linear-gradient(
+      to top,
+      transparent,
+      transparent,
+      black,
+      transparent,
+      transparent
+    );
     top: 0;
     left: 0;
-  }
+  } */
 
   .new::after {
     content: "NEW!";

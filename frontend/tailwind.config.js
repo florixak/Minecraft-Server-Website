@@ -25,6 +25,7 @@ export default {
     },
     fontFamily: {
       "titillium-web": ["Titillium Web", "sans-serif"],
+      minecraft: ["minecraft", "sans-serif"],
     },
     animation: {
       wiggle: "wiggle 10s ease-in-out infinite",
